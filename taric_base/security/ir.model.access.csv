@@ -1,3 +1,0 @@
-id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
-access_taric_code_user,taric.code use,model_taric_code,taric_base.group_taric_base_user,1,0,0,0
-access_taric_code_manager,taric.code manager,model_taric_code,taric_base.group_taric_base_manager,1,1,1,1
