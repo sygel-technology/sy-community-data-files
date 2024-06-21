@@ -12,6 +12,6 @@
     'data': [
         'security/taric_base_security.xml',
         'security/ir.model.access.csv',
-        'views/taric_codes_view.xml',
+        'views/taric_code_view.xml',
     ],
 }

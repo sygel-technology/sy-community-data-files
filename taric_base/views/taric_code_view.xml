@@ -2,25 +2,25 @@
 <odoo>
     <data>
         <!-- List View -->
-        <record model="ir.ui.view" id="taric_codes_tree">
-            <field name="name">taric.codes.tree</field>
-            <field name="model">taric.codes</field>
+        <record model="ir.ui.view" id="taric_code_tree">
+            <field name="name">taric.code.tree</field>
+            <field name="model">taric.code</field>
             <field name="arch" type="xml">
                 <tree>
                     <field name="code"/>
                     <field name="name"/>
                     <field name="start_date" optional="hide"/>
                     <field name="end_date" optional="hide"/>
-                    <field name="hierarchial"/>
+                    <field name="hierarchical"/>
                     <field name="company_id" optional="hide"/>
                 </tree>
             </field>
         </record>
         
         <!-- Form View -->
-        <record model="ir.ui.view" id="taric_codes_form">
-            <field name="name">taric.codes.form</field>
-            <field name="model">taric.codes</field>
+        <record model="ir.ui.view" id="taric_code_form">
+            <field name="name">taric.code.form</field>
+            <field name="model">taric.code</field>
             <field name="arch" type="xml">
                 <form>
                     <sheet>
@@ -28,7 +28,7 @@
                             <group>
                                 <field name="code"/>
                                 <field name="name"/>
-                                <field name="hierarchial"/>
+                                <field name="hierarchical"/>
                             </group>
                             <group>
                                 <field name="start_date"/>
@@ -42,36 +42,45 @@
         </record>
 
         <!-- Search View -->
-        <record model="ir.ui.view" id="taric_codes_search">
-            <field name="name">taric.codes.search</field>
-            <field name="model">taric.codes</field>
+        <record model="ir.ui.view" id="taric_code_search">
+            <field name="name">taric.code.search</field>
+            <field name="model">taric.code</field>
             <field name="arch" type="xml">
                 <search>
                     <field name="code"/>
                     <field name="name"/>
-                    <field name="hierarchial"/>
+                    <field name="hierarchical"/>
                     <filter string="Start date" name="filter_start_date" date="start_date"/>
                     <filter string="End date" name="filter_end_date" date="end_date"/>
                     <group>
-                        <filter name="hierarchial" string="Hierarchial" context="{'group_by':'hierarchial'}"/>
+                        <filter name="hierarchical" string="Hierarchical" context="{'group_by':'hierarchical'}"/>
                     </group>
                 </search>
             </field>
         </record>
-
-        <record model="ir.actions.act_window" id="taric_codes_action">
-            <field name="name">Taric codes</field>
-            <field name="res_model">taric.codes</field>
+        
+        <!-- Action -->
+        <record model="ir.actions.act_window" id="taric_code_action">
+            <field name="name">Taric code</field>
+            <field name="res_model">taric.code</field>
             <field name="view_mode">tree,form</field>
         </record>
-
+        
+        <!-- Menú item -->
         <menuitem 
-            id="menuitem_taric_codes" 
-            name="Taric codes" 
+            id="menusection_taric_code" 
+            name="TARIC" 
             parent="contacts.res_partner_menu_config" 
-
-            action="taric_codes_action" 
+            sequence="30"
         />
+            <menuitem 
+                id="menuitem_taric_code" 
+                name="Taric code" 
+                parent="menusection_taric_code" 
+                sequence="31"
+
+                action="taric_code_action" 
+            />
 
     </data>
 </odoo>

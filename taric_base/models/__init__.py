@@ -1,1 +1,1 @@
-from . import taric_codes
+from . import taric_code

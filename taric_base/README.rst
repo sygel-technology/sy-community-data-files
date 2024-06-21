@@ -21,7 +21,7 @@ Configuration
 
 To configure this module, you need to:
 
-#. Just install.
+#. At user, you must select a user group for this module.
 
 
 Usage
@@ -30,7 +30,7 @@ Usage
 To use this module, you need to:
 
 #. Go to the partner module.
-#. On the Settings menu, you will find the new option 'TARIC codes'..
+#. On the Settings menu, you will find the new option 'TARIC codes'.
 
 
 ROADMAP

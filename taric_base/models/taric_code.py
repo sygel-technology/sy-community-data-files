@@ -3,15 +3,15 @@
 
 from odoo import models, fields, api
 
-class TaricCodes(models.Model):
-    _name = 'taric.codes'
-    _description = "Mantenance of taric codes."
+class TaricCode(models.Model):
+    _name = 'taric.code'
+    _description = "Mantenance of taric code."
 
     code = fields.Char(string='Code', required=True, help='TARIC code.', size=10)
     name = fields.Char(string='Name', required=True, help='TARIC description.', translate=True)
     start_date = fields.Date(string='Start date', required=True, default=fields.Date.context_today, help='Vigence for the TARIC code starts.')
     end_date = fields.Date(string='End date', help='Vigence for the TARIC code ends.')
-    hierarchial = fields.Integer(string='Hierarchial', help='Hierarchial value number.')
+    hierarchical = fields.Integer(string='Hierarchical', help='Hierarchical value number.')
     company_id = fields.Many2one(comodel_name='res.company', string='Company',
         default=lambda self: self.env.company)
 
@@ -21,15 +21,15 @@ class TaricCodes(models.Model):
                       'Choose another code value - it has to be unique!')
     ]
 
-    @api.onchange('hierarchial')
-    def hierarchial_limit(self):
-        if self.hierarchial:
-            if self.hierarchial <= 0 or self.hierarchial >= 10:
-                self.hierarchial = 0
+    @api.onchange('hierarchical')
+    def hierarchical_limit(self):
+        if self.hierarchical:
+            if self.hierarchical <= 0 or self.hierarchical >= 10:
+                self.hierarchical = 0
                 return {
                     'warning': {
-                        'title': 'Hierarchial wrong value',
-                        'message': 'Hierarchial must be between 0 and 10.',
+                        'title': 'Hierarchical wrong value',
+                        'message': 'Hierarchical must be between 0 and 10.',
                     }
                 }
                 
