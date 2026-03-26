@@ -1,4 +1,6 @@
 
+
+# sy-community-data-files
 <!-- /!\ Non OCA Context : Set here the badge of your runbot / runboat instance. -->
 [![Pre-commit Status](https://github.com/sygel-technology/sy-community-data-files/actions/workflows/pre-commit.yml/badge.svg?branch=18.0)](https://github.com/sygel-technology/sy-community-data-files/actions/workflows/pre-commit.yml?query=branch%3A18.0)
 [![Build Status](https://github.com/sygel-technology/sy-community-data-files/actions/workflows/test.yml/badge.svg?branch=18.0)](https://github.com/sygel-technology/sy-community-data-files/actions/workflows/test.yml?query=branch%3A18.0)
@@ -6,8 +8,6 @@
 <!-- /!\ Non OCA Context : Set here the badge of your translation instance. -->
 
 <!-- /!\ do not modify above this line -->
-
-# sy-community-data-files
 
 This project is a collection of Odoo modules containing various data files that are too big to fit the official addons or the other Community projects.
 
